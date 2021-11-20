@@ -1,5 +1,11 @@
 # Challenges
 
+## Reverse
+
+| Challenge | Flag                      |
+| --------- | ------------------------- |
+| Activator | TPAS{2A9F-1337-95FE-D34D} |
+
 ## Misc
 
 | Challenge | Flag                                                                   |
@@ -9,10 +15,11 @@
 
 ## Labs
 
-| Challenge      | Flag                                  |
-| -------------- | ------------------------------------- |
-| Secret Service | TPAS{y0u_just_f0und_a_s3cr3t_s3rv1ce} |
-| Crackstation   | TPAS{1jc37x}                          |
+| Challenge      | Flag                                           |
+| -------------- | ---------------------------------------------- |
+| Secret Service | TPAS{y0u_just_f0und_a_s3cr3t_s3rv1ce}          |
+| Crackstation   | TPAS{1jc37x}                                   |
+| MSF            | TPAS{6bb0a00240a978e172d2ba51d65141cc50a0bfee} |
 
 ## Pwn
 
