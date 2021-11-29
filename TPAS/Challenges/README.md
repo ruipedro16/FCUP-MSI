@@ -2,9 +2,10 @@
 
 ## Reverse
 
-| Challenge | Flag                      |
-| --------- | ------------------------- |
-| Activator | TPAS{2A9F-1337-95FE-D34D} |
+| Challenge    | Flag                                 |
+|--------------|--------------------------------------|
+| Activator    | TPAS{2A9F-1337-95FE-D34D}            |
+| My First ELF | TPAS{w3lc0m3_t0_r3v3rs3_3ng1n33r1ng} |
 
 ## Misc
 
