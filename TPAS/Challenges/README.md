@@ -9,10 +9,14 @@
 
 ## Misc
 
-| Challenge | Flag                                                                   |
-| --------- | ---------------------------------------------------------------------- |
-| Warmup 1  | TPAS{280d44ab1e9f79b5cce2dd4f58f5fe91f0fbacdac9f7447dffc318ceb79f2d02} |
-| Warmup 2  | TPAS{html_c0mm3nts_c4n_be_us3ful_s0m3tim3s}                            |
+| Challenge           | Flag                                                                   |
+|---------------------|------------------------------------------------------------------------|
+| Warmup 1            | TPAS{280d44ab1e9f79b5cce2dd4f58f5fe91f0fbacdac9f7447dffc318ceb79f2d02} |
+| Warmup 2            | TPAS{html_c0mm3nts_c4n_be_us3ful_s0m3tim3s}                            |
+| Francesinha         | TPAS{Cafe Aviz}                                                        |
+| We will rockyou.txt | --                                                                     |
+| Spectrogram         | --                                                                     |
+| Tik Tok Tik Tok     | TPAS{t1m3_matt3rs_s0_const4nt_t1m3_alg0rithms_ar3_c00l!}               |
 
 ## Labs
 
