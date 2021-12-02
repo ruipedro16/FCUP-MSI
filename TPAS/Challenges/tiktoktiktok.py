@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import os
-import re
 import time
 
 values = 'abcdef0123456789'
