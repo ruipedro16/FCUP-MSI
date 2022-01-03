@@ -45,6 +45,6 @@ undefined8 main(void)
 
 Thus, we have to find the offset between `local_58` (our input) and `local_48` (command that is run) so that we can inject the command we want to run.
 
-After finding out the correct offset (= 8), we can then get the flag, which, as we can see, is TPAS{C0mManD_Inj3ct10n_st1ll_w0rks_1n_2021}.
+After finding out the correct offset (buffer length - input length = 16 - 8 = 8), we can then get the flag, which, as we can see, is TPAS{C0mManD_Inj3ct10n_st1ll_w0rks_1n_2021}.
 
 ![](img/injection-flag.png)
