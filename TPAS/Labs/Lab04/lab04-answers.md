@@ -1,4 +1,4 @@
-# Lab 03 - Network Scanning
+# Lab 04 - Password cracking and exploitation
 
 ## 1
 
