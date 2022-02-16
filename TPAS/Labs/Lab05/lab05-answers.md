@@ -19,7 +19,7 @@ Channel: 1
 BSSID: 00:12:17:B7:8C:75
 
 
-Channel: 1
+Channel: 6
 
 1. Enable monitor mode on the network interface: `airmon-ng start wlp1s0`
 2. Capture packets: `airodump-ng -c 6 --bssid 00:12:17:B7:8C:75 -w capture.cap wlp1s0mon`
