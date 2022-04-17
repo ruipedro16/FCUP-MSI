@@ -1,0 +1,125 @@
+\documentclass[a4paper, 11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{a4wide}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\usepackage{relsize}
+\usepackage{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}
+\usepackage{url}
+\usepackage[normalem]{ulem}
+
+\singlespace
+
+\title{Security and Applications in Trusted Hardware \\ [0.8em] \smaller Portable Password Manager}
+\author{João Silva \and Rui Fernandes \and Tiago Garcia}
+\date{}
+
+\renewcommand\labelitemi{--}
+
+\hypersetup{
+    pdftitle={Portable Password Manager},
+    pdfborder={0 0 0}
+}
+
+\begin{document}
+
+\maketitle
+
+\section{Problem}
+
+Current authentication schemes are based on something the user has (\textit{e.g.} a smart card or a 
+security token), something the user knows (\textit{e.g.} a password or a PIN), or their physical 
+characteristics (\textit{e.g.} a fingerprint or iris pattern) \cite{1246384}, being password-based 
+authentication the most widely used.
+
+
+One problem with password-based authentication is that infrequently used passwords are easy to 
+forget, and it is hard to remember secure passwords. In fact, to avoid memorizing numerous 
+passwords, users tend to re-use the same password on different platforms \cite{florencio2006a}. As 
+a result, discovering a user's password grants an attacker access to multiple of the user's 
+systems. Some solutions address this issue by requiring users to remember only one password. In 
+\cref{sec:solutions}, we discuss two possible solutions to this problem, Single Sign On (SSO) and 
+Password Managers.
+
+\section{Existing Solutions} \label{sec:solutions}
+
+In this section, we describe two different solutions to the problem of password re-use across 
+multiple services, namely Single Sign On and Password Managers.
+
+\subsection{Single Sign On}
+
+User authentication can be delegated to an external service, known as Single Sign On (SSO). This 
+service's purpose is to authenticate users and securely communicate successful authentication to 
+the services the user wants to use. This way, the user only needs to remember the password he uses 
+for the SSO service. Examples of SSO services include Shibboleth 
+\cite{10.1007/978-3-642-37282-7_14}.
+
+The main issue with this approach is their \uline{low portability} and their \uline{availability}, 
+or lack thereof. For one thing, the service to which the user wants to authenticate must trust the 
+SSO system. If this is not the case, the user still needs to remember a new password for the 
+service. In other words, SSO systems only work with services that trust them.
+
+On the other hand, a service may not trust in an SSO system due to the lack of availability 
+guarantees. In other words, in case of a denial of service (DoS), the SSO may be disabled or 
+rendered inaccessible, restricting user's ability to authenticate themselves.
+
+\subsection{Password Managers}
+
+Password managers are designed to store and provide access to a user's passwords. The user only 
+needs to memorize a \textit{master password} and store his passwords in the password manager. 
+Examples of password managers include Bitwarden \cite{Bitwarde48:online} and KeePass 
+\cite{KeePassP1:online}.
+
+End-to-end encryption ensures that only the user has access to their master password and password 
+vault -- it cannot be accessed by the service provider or intercepted by hackers. However, since no 
+one else can access the user's data, it is crucial that they remember the master password. 
+Moreover, in order to safely store the passwords, symmetrical ciphers (\textit{e.g.} AES) are used. 
+These algorithms use either the master password, or a transformation of it such as its hash value, 
+as a key to encrypt the stored data. However, other solutions exist. For example, by default, 
+Firefox does not require a master password, using a default key to cipher passwords data base.
+
+Finally, despite being more resistant to DoS attacks, password managers are still susceptible to 
+brute-force attacks.
+
+\section{Proposed Solution}
+
+The major problems with the existing solutions discussed in \cref{sec:solutions} are their 
+portability and availability issues, and the fact that they are not resistant to brute-force 
+attacks, or both. In our proposed solution, this is circumvented by using the smart card as a means 
+of securely storing a cryptographic key which is used to cipher externally stored passwords. As 
+such, the card is responsible for generating a symmetric cryptographic key (\textit{e.g.} AES) used 
+to encrypt database containing the passwords, which will be stored in the cloud. Once the database 
+is encrypted, we can assume that the passwords are stored securely. Whenever we want to access the 
+password manager, the card reader will be responsible for storing and creating the passwords.
+
+In this approach, the database could still be attacked, but the computational resources required to 
+perform a successful attack are significantly greater given the size of the key. When it comes to 
+access control, access to the card is protected by a PIN defined by the user, which cannot be 
+brute-forced as the card will be locked after a certain number of unsuccessful attempts. In the 
+case that the smart card supports multiple applications, no other application internal to the card 
+can access the cryptographic key.
+
+Finally, another factor that should be taken into account is that given the fact that a Java Card 
+only persists data for about 10 years, a mechanism to export data to another card should be 
+implemented.
+
+\subsection{Trust Model}
+
+In this work, we make the following assumptions:
+
+\begin{itemize}
+    \item The card is tamper-proof. Thus, it is not possible for an attacker to access the 
+    cryptographic key without previous authentication.
+    \item Only the user knows the smart card access PIN. This means that if somebody authenticates 
+    with the user PIN, he is the expected user.
+\end{itemize}
+
+\pagebreak
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs}
+
+\end{document}
