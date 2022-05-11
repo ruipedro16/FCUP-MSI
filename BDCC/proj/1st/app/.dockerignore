@@ -1,0 +1,6 @@
+.dockerignore
+.vscode
+.idea
+.gcloudignore
+.gitignore
+.git
