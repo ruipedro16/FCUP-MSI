@@ -1,6 +1,3 @@
-# Big Data & Cloud Computing
+# 1st Project
 
--   [Pandas](1-pandas)
--   [BigQuery](2-bigquery)
--   [Flask](3-flask)
--   [Apache Beam](4-beam/)
+**NOTE:** Place the Cloud Vision API key on `big-data-project1-347618-be6d8ed4bd0b.json`.

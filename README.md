@@ -16,7 +16,7 @@ Master's degree in Information Security
 -   [Segurança de Sistemas e Dados](SSD)
 -   [Segurança e Aplicações de Hardware Confiável](SAHC)
 -   [Segurança em Engenharia de Software](SES)
--   [Tópicos Avançados em Bases de Dados](TABD)
+-   Tópicos Avançados em Bases de Dados
 
 ## License
 
